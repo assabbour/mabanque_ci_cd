@@ -1,0 +1,7 @@
+{
+    "transactions": [
+        { "id": 1, "name": "Versement Salaire", "amount": 1500, "date": "2024-12-01" },
+        { "id": 2, "name": "Paiement Électricité", "amount": -80, "date": "2024-12-03" },
+        { "id": 3, "name": "Achat Supermarché", "amount": -120, "date": "2024-12-04" }
+    ]
+}
