@@ -5,7 +5,7 @@ pipeline {
     // Déclare les variables d'environnement utilisées dans le pipeline
     environment {
         GIT_REPO = 'https://github.com/assabbour/mabanque_ci_cd.git' // URL de votre dépôt GitHub
-        NODE_VERSION = '16' // Version de Node.js requise pour Angular
+        NODE_VERSION = '18' // Version de Node.js requise pour Angular
     }
     
     stages {
