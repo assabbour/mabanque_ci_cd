@@ -20,12 +20,12 @@ pipeline {
         // Deuxième étape : Installer Node.js
         stage('Installer Node.js') {
             steps {
-                echo 'Installation de Node.js...'
+                echo 'Installation de Node.js...' // Affiche un message dans la console Jenkins
                 sh """
                 # Ajouter le référentiel Node.js et installer la version spécifiée
                 curl -fsSL https://deb.nodesource.com/setup_${NODE_VERSION}.x | sudo -E bash -
                 sudo apt-get install -y nodejs
-                # Vérifier les versions installées
+                # Vérifier les versions installées pour s'assurer que Node.js et npm sont correctement configurés
                 node -v
                 npm -v
                 """
@@ -51,8 +51,8 @@ pipeline {
         // Cinquième étape : Afficher les fichiers générés après la construction
         stage('Afficher les fichiers générés') {
             steps {
-                echo 'Liste des fichiers dans le dossier dist/mabanque_ci_cd :' // Affiche un message
-                sh 'ls -la dist/mabanque_ci_cd' // Liste les fichiers dans le répertoire de sortie
+                echo 'Liste des fichiers dans le dossier dist/mabanque :' // Affiche un message pour localiser les fichiers générés
+                sh 'ls -la dist/mabanque' // Liste les fichiers dans le répertoire de sortie après la construction
             }
         }
     }
@@ -60,7 +60,7 @@ pipeline {
     // Actions à effectuer une fois le pipeline terminé
     post {
         always {
-            echo 'Pipeline terminé.' // Affiche un message indiquant la fin du pipeline
+            echo 'Pipeline terminé.' // Affiche un message indiquant la fin du pipeline, quelle que soit l'issue des étapes
         }
     }
 }
