@@ -20,12 +20,12 @@ pipeline {
         // Deuxième étape : Installer Node.js
         stage('Installer Node.js') {
             steps {
-                echo 'Installation de Node.js...' // Affiche un message dans la console Jenkins
+                echo 'Installation de Node.js...'
                 sh """
-                // Ajoute le référentiel Node.js et installe la version spécifiée
+                # Ajouter le référentiel Node.js et installer la version spécifiée
                 curl -fsSL https://deb.nodesource.com/setup_${NODE_VERSION}.x | sudo -E bash -
                 sudo apt-get install -y nodejs
-                // Vérifie les versions de Node.js et npm installées
+                # Vérifier les versions installées
                 node -v
                 npm -v
                 """
